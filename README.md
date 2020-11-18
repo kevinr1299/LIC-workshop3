@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Team:
 
--Romero Quijano, Kevin Alewjandro   RQ172027
+-Romero Quijano, Kevin Alejandro   RQ172027
 
 -Lopez Cañas, Leonardo Elenilson    LC171998
 
