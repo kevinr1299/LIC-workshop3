@@ -28,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./node_modules/bootstrap-4-grid/scss/grid.scss",
               "src/styles.sass"
             ],
             "scripts": []
@@ -92,6 +94,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.sass"
             ],
             "scripts": []
@@ -123,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "workshop3"
+    }
+  },
+  "defaultProject": "workshop3",
+  "cli": {
+    "analytics": "5ac653e8-de0f-4d8d-85e8-2dc7d5747232"
+  }
 }

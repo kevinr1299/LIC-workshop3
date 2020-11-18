@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4 col-sm-12 mt-3">
+      <h1 class="text-center txt-purple">Form</h1>
+      <div [formGroup]='personForm'>
+        <mat-form-field appearance="legacy" class="col-sm-12">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName='firstName'>
+          <mat-icon matSuffix>person_outline</mat-icon>
+          <mat-error>The name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="col-sm-12">
+          <mat-label>Last name</mat-label>
+          <input matInput formControlName='lastName'>
+          <mat-icon matSuffix>person_outline</mat-icon>
+          <mat-error>The last name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="col-sm-12">
+          <mat-label>Age</mat-label>
+          <input matInput formControlName='age' type='number' min='0'>
+          <mat-error>The age is not a whole number</mat-error>
+        </mat-form-field>
+        <div class="col-sm-12 text-center">
+          <button mat-raised-button color='primary' *ngIf="selected == null" class='btn' [disabled]='!personForm.valid' (click)='save_person()'>Save</button>
+          <button mat-stroked-button color='warn' *ngIf="selected == null" (click)='personForm.reset()'>Clear</button>
+          <button mat-raised-button color='primary'  *ngIf="selected != null" class='btn' [disabled]='!personForm.valid' (click)='update_person()'>Update</button>
+          <button mat-stroked-button color='warn'  *ngIf="selected != null" class="btn" (click)='delete_person()'>Delete</button>
+          <button mat-raised-button color='warn' *ngIf="selected != null" (click)='cancel_selection()'>Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-sm-12 mt-3 mb-3">
+      <h1 class="text-center txt-purple">People list</h1>
+      <table mat-table [dataSource]='dataSource' id='recordsTable'>
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef color='primary'> Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="lastName">
+          <mat-header-cell *matHeaderCellDef> Lastname </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="age">
+          <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns; let i = index;" (click)='select_person(i, row)' matRipple></mat-row>
+      </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

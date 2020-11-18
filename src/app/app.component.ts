@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'workshop3';
+  static COUNTER = 0;
+
+  get_counter() {
+    return AppComponent.COUNTER;
+  }
 }
