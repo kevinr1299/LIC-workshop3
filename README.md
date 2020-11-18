@@ -1,6 +1,9 @@
 # Workshop3
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+Participants:
+-Romero Quijano, Kevin Alewjandro   RQ172027
+-Lopez Cañas, Leonardo Elenilson    LC171998
 
 ## Development server
 
